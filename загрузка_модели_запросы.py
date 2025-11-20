@@ -1,3 +1,13 @@
+# Конектимся к платформе HuggingFace
+from huggingface_hub import login
+import os
+
+# Получение токена из секретов Colab
+hf_token = os.getenv("huggingface")
+
+# Аутентификация
+login(token=hf_token)
+
 # Вспомогательная ф-ция для модели
 def messages_to_prompt(messages):
     # Инициализируем пустую строку для хранения итогового промпта
